@@ -8,7 +8,7 @@
 			<h1 data-anime="400" class="fadeInUp"><?php the_field('titulo_introducao'); ?></h1>
 			<blockquote class="quote-externo fadeInUp" data-anime="700">
 				<p><?php the_field('quote_introducao'); ?></p>
-				<cite><?php the_field('citacao_introducao'); ?></cite>
+				<cite><?php the_field('citacao_autor'); ?></cite>
 			</blockquote>
 
 			<a href="/bikcraft/produtos" class="btn fadeInUp" data-anime="1000">Orçamento</a>
