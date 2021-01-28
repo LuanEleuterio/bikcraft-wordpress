@@ -3,7 +3,7 @@
 ?>
 <?php get_header(); ?>	
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-	<?php include(TEMPLATEPATH . "/includes/introducao.php") ?>
+	<?php include(TEMPLATEPATH . "/includes/introducao.php"); ?>
 
 	<div class="container fadeInUp" data-anime="1000" data-slide="quote">
 		<blockquote class="quote-cliente">
@@ -21,9 +21,7 @@
 	</div>
 
 	<div class="portfolio fadeInUp" data-anime="1300">
-		<div class="container" data-slide="portfolio-slide">
-			<?php include(TEMPLATEPATH . "/includes/portfolio-slide.php") ?>
-		</div>
+		<?php include(TEMPLATEPATH . "/includes/portfolio-slide.php"); ?>
 	</div>
 	<?php endwhile; else: endif ?>
 <?php get_footer(); ?>	

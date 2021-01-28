@@ -48,20 +48,11 @@
 	</section>
 
 	<section class="portfolio fadeInUp" data-anime="1300">
-		<div class="container">
-			<h2 class="subtitulo">Portfólio</h2>
-			<div class="container" data-slide="portfolio-slide">
-				<?php include(TEMPLATEPATH . "/includes/portfolio-slide.php") ?>
-			</div>
-
-			<div class="call">
-				<p><?php the_field('chamada_portfolio'); ?></p>
-				<a href="/bikcraft/portfolio" class="btn">Portfólio</a>
-			</div>
-		</div>
+		<h2 class="subtitulo">Portfólio</h2>
+		<?php include(TEMPLATEPATH . "/includes/portfolio-slide.php"); ?>
 	</section>
 
-	<?php include(TEMPLATEPATH . "/includes/qualidade.php") ?>
+	<?php include(TEMPLATEPATH . "/includes/qualidade.php"); ?>
 
 	<?php endwhile; else: endif ?>
 <?php get_footer(); ?>
