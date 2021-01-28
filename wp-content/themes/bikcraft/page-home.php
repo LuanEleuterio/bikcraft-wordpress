@@ -61,13 +61,7 @@
 		</div>
 	</section>
 
-	<section class="qualidade container fadeInUp" data-anime="1300">
-		<?php include(TEMPLATEPATH . "/includes/qualidade.php") ?>		
+	<?php include(TEMPLATEPATH . "/includes/qualidade.php") ?>
 
-		<div class="call">
-			<p><?php the_field('chamada_sobre'); ?></p>
-			<a href="/bikcraft/sobre" class="btn btn-preto">Sobre</a>
-		</div>
-	</section>
 	<?php endwhile; else: endif ?>
 <?php get_footer(); ?>

@@ -25,8 +25,7 @@
 		</div>
 	</section>
 
-	<section class="qualidade container fadeInUp" data-anime="1000">
-		<?php include(TEMPLATEPATH . "/includes/qualidade.php") ?>
-	</section>
+	<?php include(TEMPLATEPATH . "/includes/qualidade.php") ?>
+	
 	<?php endwhile; else: endif ?>
 <?php get_footer(); ?>	
