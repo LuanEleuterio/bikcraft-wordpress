@@ -2,12 +2,8 @@
 // Template Name: Portfolio
 ?>
 <?php get_header(); ?>	
-	<section class="introducao-interna interna_portfolio">
-		<div class="container">
-			<h1 class="fadeInUp" data-anime="400">Portfólio</h1>
-			<p class="fadeInUp" data-anime="700">conheça os projetos da Bikcraft.</p>
-		</div>
-	</section>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<?php include(TEMPLATEPATH . "/includes/introducao.php") ?>
 
 	<div class="container fadeInUp" data-anime="1000" data-slide="quote">
 		<blockquote class="quote-cliente">
@@ -38,5 +34,5 @@
 			</ul>
 		</div>
 	</div>
-
+	<?php endwhile; else: endif ?>
 <?php get_footer(); ?>	

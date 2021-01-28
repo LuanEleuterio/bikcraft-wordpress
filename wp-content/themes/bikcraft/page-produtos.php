@@ -2,12 +2,8 @@
 // Template Name: Produtos
 ?>
 <?php get_header(); ?>	
-	<section class="introducao-interna interna_produtos">
-		<div class="container">
-			<h1 class="fadeInUp" data-anime="400">Produtos</h1>
-			<p class="fadeInUp" data-anime="700">conheça todos os nossos produtos.</p>
-		</div>
-	</section>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<?php include(TEMPLATEPATH . "/includes/introducao.php") ?>
 
 	<section class="container produtos_item fadeInUp" data-anime="1000">
 		<div class="grid-11">
@@ -107,4 +103,5 @@
 			</div>
 		</div>
 	</section>
+	<?php endwhile; else: endif ?>
 <?php get_footer(); ?>	

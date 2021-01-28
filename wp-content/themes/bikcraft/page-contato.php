@@ -2,12 +2,8 @@
 // Template Name: Contato
 ?>
 <?php get_header(); ?>	
-	<section class="introducao-interna interna_contato">
-		<div class="container">
-			<h1 class="fadeInUp" data-anime="400">Contato</h1>
-			<p class="fadeInUp" data-anime="700">tire sua dúvidas com a gente.</p>
-		</div>
-	</section>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+	<?php include(TEMPLATEPATH . "/includes/introducao.php") ?>
 
 	<section class="contato container fadeInUp" data-anime="1000">
 		<form class="contato_form grid-8" id="form_orcamento">
@@ -38,4 +34,5 @@
 	<div class="container contato_mapa fadeInUp" data-anime="1000">
 		<a href="https://google.com" target="_blank" class="grid-16"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/endereco-bikcraft.jpg" alt="Endereço Bikcraft"></a>
 	</div>
+	<?php endwhile; else: endif?>
 <?php get_footer(); ?>	
