@@ -5,13 +5,13 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 	<section class="introducao">
 		<div class="container">
-			<h1 data-anime="400" class="fadeInUp">Bicicletas Feitas a Mão</h1>
+			<h1 data-anime="400" class="fadeInUp"><?php the_field('titulo_introducao'); ?></h1>
 			<blockquote class="quote-externo fadeInUp" data-anime="700">
-				<p>"não tenha nada em sua casa que você não considere útil ou acredita ser bonito"</p>
-				<cite>Willian Morris</cite>
+				<p><?php the_field('quote_introducao'); ?></p>
+				<cite><?php the_field('citacao_introducao'); ?></cite>
 			</blockquote>
 
-			<a href="produtos.html" class="btn fadeInUp" data-anime="1000">Orçamento</a>
+			<a href="/bikcraft/produtos" class="btn fadeInUp" data-anime="1000">Orçamento</a>
 		</div>
 	</section>
 
@@ -42,49 +42,31 @@
 		</ul>
 
 		<div class="call">
-			<p>Veja mais detalhes dos nossos produtos! Clique no botão abaixo.</p>
-			<a href="<?php echo get_stylesheet_directory_uri(); ?>/web/pages/produtos.html" class="btn btn-preto">Produtos</a>
+			<p><?php the_field('chamada_produtos'); ?></p>
+			<a href="/bikcraft/produtos" class="btn btn-preto">Produtos</a>
 		</div>
 	</section>
 
 	<section class="portfolio fadeInUp" data-anime="1300">
 		<div class="container">
 			<h2 class="subtitulo">Portfólio</h2>
-			<ul class="portfolio_items">
-				<li class="grid-8"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/portfolio/retro.jpg" alt="Bicicleta Retro"></li>
-				<li class="grid-8"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/portfolio/passeio.jpg" alt="Bicicleta Passeio"></li>
-				<li class="grid-16"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/portfolio/esporte.jpg" alt="Bicicleta Esporte"></li>
-			</ul>
+			<div class="container" data-slide="portfolio-slide">
+				<?php include(TEMPLATEPATH . "/includes/portfolio-slide.php") ?>
+			</div>
 
 			<div class="call">
-				<p>Saiba mais sobre nosso Portfólio!</p>
-				<a href="<?php echo get_stylesheet_directory_uri(); ?>/web/pages/protfolio.html" class="btn">Portfólio</a>
+				<p><?php the_field('chamada_portfolio'); ?></p>
+				<a href="/bikcraft/portfolio" class="btn">Portfólio</a>
 			</div>
 		</div>
 	</section>
 
 	<section class="qualidade container fadeInUp" data-anime="1300">
-		<h2 class="subtitulo">Qualidade </h2>
-		<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/bikcraft-qualidade.svg" alt="Bikcraft Qualidade">
-
-		<ul class="qualidade_list">
-			<li class="grid-1-3">
-				<h3>Durabilidade</h3>
-				<p>Ainda assim, existem dúvidas a respeito de como a necessidade de renovação.</p>
-			</li>
-			<li class="grid-1-3">
-				<h3>Design</h3>
-				<p>Ainda assim, existem dúvidas a respeito de como a necessidade de renovação.</p>
-			</li>
-			<li class="grid-1-3">
-				<h3>Sustentabilidade</h3>
-				<p>Ainda assim, existem dúvidas a respeito de como a necessidade de renovação.</p>
-			</li>
-		</ul>
+		<?php include(TEMPLATEPATH . "/includes/qualidade.php") ?>		
 
 		<div class="call">
-			<p>Conheça mais a nossa história!</p>
-			<a href="<?php echo get_stylesheet_directory_uri(); ?>/web/pages/sobre.html" class="btn btn-preto">Sobre</a>
+			<p><?php the_field('chamada_sobre'); ?></p>
+			<a href="/bikcraft/sobre" class="btn btn-preto">Sobre</a>
 		</div>
 	</section>
 	<?php endwhile; else: endif ?>
