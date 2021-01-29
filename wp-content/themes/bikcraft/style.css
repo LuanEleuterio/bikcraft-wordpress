@@ -349,8 +349,6 @@ img {
 .quebra_footer {
   width: 100%;
   height: 220px;
-  background: url("./img/bg-footer.jpg") no-repeat center;
-  background-size: cover;
   text-align: center;
   padding-top: 40px;
 }

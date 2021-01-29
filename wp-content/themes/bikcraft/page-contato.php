@@ -21,7 +21,7 @@
 			<span><?php the_field('telefone'); ?></span>
 			<span><?php the_field('email'); ?></span>
 			<span><?php the_field('endereco'); ?></span>
-			<span><?php the_field('endereco_uf'); ?></span>
+			<span><?php the_field('endereco_complementar'); ?></span>
 			<h3>Redes Sociais</h3>
 			<?php include(TEMPLATEPATH . "/includes/redes-sociais.php"); ?>
 		</div>
