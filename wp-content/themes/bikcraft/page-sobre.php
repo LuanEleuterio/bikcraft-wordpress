@@ -7,21 +7,16 @@
 	<section class="missao_sobre container fadeInUp" data-anime="1000">
 		<div class="grid-10">
 			<h2 class="subtitulo_interno">História, Missão e Visão</h2>
-			<p>No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formulação da gestão inovadora da qual fazemos parte da qual fazemos parte.</p>
-			<p>No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formulação da gestão inovadora da qual fazemos parte da qual fazemos parte.</p>
+			<?php the_field('missao'); ?>
 		</div>
 
 		<div class="grid-6">
 			<h2 class="subtitulo_interno">Valores</h2>
-			<ul>
-				<li>- Qualidade no processo</li>
-				<li>- Foco no cliente</li>
-				<li>- Sustentabilidade</li>
-			</ul>
+			<?php the_field('valores'); ?>
 		</div>
 
 		<div class="grid-16 foto_equipe">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/equipe-bikcraft.jpg" alt="Equipe Bikcraft">
+			<img src="<?php the_field("img_equipe"); ?>" alt="Equipe Bikcraft">
 		</div>
 	</section>
 
