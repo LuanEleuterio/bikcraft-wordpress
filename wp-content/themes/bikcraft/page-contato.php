@@ -18,21 +18,17 @@
 
 		<div class="grid-8 contato_dados">
 			<h3>Dados</h3>
-			<span>+55 99 99999-9999 </span>
-			<span>orcamento@bikcraft.com</span>
-			<span>Rua Ta Logo Ali - Pinheiros</span>
-			<span>São Paulo - SP</span>
+			<span><?php the_field('telefone'); ?></span>
+			<span><?php the_field('email'); ?></span>
+			<span><?php the_field('endereco'); ?></span>
+			<span><?php the_field('endereco_uf'); ?></span>
 			<h3>Redes Sociais</h3>
-			<ul>
-				<li><a href="https://facebook.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/redes-sociais/facebook.svg" alt="Facebook"></a></li>
-				<li><a href="https://twitter.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/redes-sociais/twitter.svg" alt="Twitter"></a></li>
-				<li><a href="https://instagram.com" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/redes-sociais/instagram.svg" alt="Instagram"></a></li>
-			</ul>
+			<?php include(TEMPLATEPATH . "/includes/redes-sociais.php"); ?>
 		</div>
 	</section>
 
 	<div class="container contato_mapa fadeInUp" data-anime="1000">
-		<a href="https://google.com" target="_blank" class="grid-16"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/endereco-bikcraft.jpg" alt="Endereço Bikcraft"></a>
+		<a href="<?php the_field('link_mapa'); ?>" target="_blank" class="grid-16"><img src="<?php the_field('foto_mapa'); ?>" alt="<?php the_field('endereco'); ?>"></a>
 	</div>
 	<?php endwhile; else: endif?>
 <?php get_footer(); ?>	
