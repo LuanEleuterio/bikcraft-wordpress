@@ -6,18 +6,12 @@
 	<?php include(TEMPLATEPATH . "/includes/introducao.php"); ?>
 
 	<div class="container fadeInUp" data-anime="1000" data-slide="quote">
+	<?php if(have_rows('colecao_citacoes')): while(have_rows('colecao_citacoes')) : the_row(); ?>
 		<blockquote class="quote-cliente">
-			<p>"No mundo atual, a contínua expansão de nossa atividade cumpre um papel essencial na formulação de gestão inovadora."</p>
-			<cite>Barbara Moss</cite>
+			<p><?php the_sub_field('citacao');?></p>
+			<cite><?php the_sub_field('autor_citacao');?></cite>
 		</blockquote>
-		<blockquote class="quote-cliente">
-			<p>"Por outro lado, o fenômeno da Internet faz parte de um processo de gerenciamento das diversas correntes de pensamento."</p>
-			<cite>Maik O'Bannon</cite>
-		</blockquote>
-		<blockquote class="quote-cliente">
-			<p>"Neste sentido, a estrutura atual da organização aponta para a melhoria do fluxo de informações."</p>
-			<cite>Egon Zaitv</cite>
-		</blockquote>
+	<?php endwhile; else : endif; ?>
 	</div>
 
 	<div class="portfolio fadeInUp" data-anime="1300">
