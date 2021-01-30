@@ -39,27 +39,26 @@
 	<section class="produtos container fadeInUp" data-anime="1300">
 		<h2 class="subtitulo">Produtos</h2>
 		<ul class="produtos_list">
-			<li class=grid-1-3>
-				<div class="produtos_icone">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/produtos/passeio.svg" alt="bikcraft passeio">
-				</div>
-				<h3>Passeio</h3>
-				<p>Ainda assim, existem dúvidas a respeito de como a necessidade de renovação.</p>
-			</li>
-			<li class=grid-1-3>
-				<div class="produtos_icone">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/produtos/esporte.svg" alt="bikcraft passeio">
-				</div>
-				<h3>Esporte</h3>
-				<p>Ainda assim, existem dúvidas a respeito de como a necessidade de renovação.</p>
-			</li>
-			<li class=grid-1-3>
-				<div class="produtos_icone">
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/produtos/retro.svg" alt="bikcraft passeio">
-				</div>
-				<h3>Retro</h3>
-				<p>Ainda assim, existem dúvidas a respeito de como a necessidade de renovação.</p>
-			</li>
+			<?php
+				$args = array (
+					'post_type' => 'produtos'
+				);
+				$the_query = new WP_Query ( $args );
+			?>
+
+			<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+
+				<li class=grid-1-3>
+					<a href="<?php the_permalink() ?>">
+						<div class="produtos_icone">
+							<img src="<?php the_field('icone_produto') ?>" alt="Bikcraft <?php the_title(''); ?>">
+						</div>
+						<h3><?php the_title(''); ?></h3>
+						<p><?php the_field('resumo_produtos'); ?></p>
+					</a>
+				</li>
+			<?php endwhile; else: endif; ?>
+			<?php wp_reset_query(); wp_reset_postdata(); ?>
 		</ul>
 
 		<div class="call">
