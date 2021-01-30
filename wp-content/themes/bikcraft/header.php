@@ -12,8 +12,6 @@
 	<meta property="og:image" content="http://bikcraft.com/img/og-image.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="favicon.ico">
-
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/style.css">
 	<script>document.documentElement.classList.add("js");</script>
 
 	<?php wp_head(); ?>
@@ -27,12 +25,14 @@
 			</a>
 
 			<nav class="header_menu grid-12">
-				<ul>
-					<li><a href="/bikcraft/sobre">Sobre</a></li>
-					<li><a href="/bikcraft/produtos">Produtos</a></li>
-					<li><a href="/bikcraft/portfolio">Portfólio</a></li>
-					<li><a href="/bikcraft/contato">Contato</a></li>
-				</ul>
+				<?php
+					$args = array(
+						'menu' => 'principal',
+						'theme_location' => 'header-menu',
+						'container' => false
+					);
+					wp_nav_menu( $args );
+				?>
 			</nav>
 		</div>
 	</header>

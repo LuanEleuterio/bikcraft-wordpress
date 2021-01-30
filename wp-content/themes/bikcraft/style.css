@@ -134,6 +134,10 @@ img {
   animation: animation-opacity 1s;
 }
 
+.header_menu .current_page_item a{
+  color: #fff;
+}
+
 @keyframes animation-opacity {
   from {
     opacity: 0.5;

@@ -240,7 +240,7 @@ add_action( 'init', 'register_my_menu' );
 <?php
 	$args = array(
 		'menu' => 'principal',
-		'theme_location' => 'menu-principal',
+		'theme_location' => 'header-menu',
 		'container' => false
 	);
 	wp_nav_menu( $args );

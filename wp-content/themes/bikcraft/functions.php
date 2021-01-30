@@ -1,4 +1,26 @@
 <?php
+  function bikcraft_scripts() { 
+    // Registra o Simple Slide
+    wp_register_script( 'simple-slide', get_template_directory_uri() . '/js/simple-slide.js', array(),false, true );
+
+    wp_register_script( 'simple-anime', get_template_directory_uri() . '/js/simple-anime.js', array(), false, true );
+
+    wp_register_script( 'script', get_template_directory_uri() . '/js/script.js', array('simple-slide', 'simple-anime'), false, true );
+  
+    // Coloca script no site
+    wp_enqueue_script( 'script' );
+  }
+  add_action( 'wp_enqueue_scripts', 'bikcraft_scripts' );
+
+  function bikcraft_css() {
+    // Registra o Style
+    wp_register_style( 'bikcraft-style', get_template_directory_uri() . '/style.css', array(), false, false);
+  
+    // Coloca style no site
+    wp_enqueue_style( 'bikcraft-style' );
+  }
+  add_action( 'wp_enqueue_scripts', 'bikcraft_css' );
+
   remove_action('wp_head', 'rsd_link');
   remove_action('wp_head', 'wlwmanifest_link');
   remove_action('wp_head', 'start_post_rel_link', 10, 0 );
@@ -13,6 +35,7 @@
   // Habilitar Menus
   add_theme_support('menus');
 
+  // Registrar Menu
   function register_my_menu() {
     register_nav_menu('header-menu',__( 'Header Menu' ));
   }
